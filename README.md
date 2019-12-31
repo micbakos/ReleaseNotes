@@ -8,7 +8,7 @@ It uses [kscript](https://github.com/holgerbrandl/kscript) to read an execute th
 The organization abides by the scrum agile methodology and the mobile team follows the git flow branching model. Before every release the team copiles 
 all the work that has been done on each sprint. The document is a list of Github's Pull Requests that link to a Jira issue ticket.
 
-This goal of this script is to laverage the infrastracture of the company and the mobile team to automate this task. The release notes are compiled into a Markdown file.
+This goal of this script is to laverage the infrastracture of the company and the mobile team's workflow to automate this task. The release notes are compiled into a Markdown file.
 
 ## Installation
 * Clone the project
