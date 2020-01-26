@@ -6,7 +6,5 @@
 @file:Include("src/PullRequestResolver.kt")
 @file:Include("src/NotesWriter.kt")
 
-args.read().also {
-    it.gitLog().resolve().write()
-}
+args.read().gitLog().resolve().write()
 
