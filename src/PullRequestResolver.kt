@@ -1,5 +1,5 @@
 
-fun String.resolve(project: Project): List<PullRequest> {
+fun String.resolve(): List<PullRequest> {
     val output = lines()
 
     // The title consists of two capture groups. The PR's id and branch
@@ -26,5 +26,4 @@ fun String.resolve(project: Project): List<PullRequest> {
         }
     }
         .filterNotNull()
-        .filterNot { it.branch.startsWith(project.other().name, ignoreCase = true) }
 }

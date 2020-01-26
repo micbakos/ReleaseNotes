@@ -7,6 +7,6 @@
 @file:Include("src/NotesWriter.kt")
 
 args.read().also {
-    it.gitLog().resolve(it.project).write()
+    it.gitLog().resolve().write()
 }
 
