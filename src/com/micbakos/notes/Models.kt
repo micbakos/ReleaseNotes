@@ -15,6 +15,7 @@ class ProjectConfiguration {
 
 data class Arguments(
     val directory: String,
+    val variant: String,
     val fromCommit: String,
     val toCommit: String
 )
