@@ -5,13 +5,13 @@ import com.google.gson.JsonSyntaxException
 import java.io.File
 import kotlin.system.exitProcess
 
-fun Arguments.resolveConfig(): Config {
-    val matches: Array<File>? = File(directory).listFiles { _, name ->
+fun resolveConfig(arguments: Arguments): Config {
+    val matches: Array<File>? = File(arguments.directory).listFiles { _, name ->
         name.endsWith(ProjectConfiguration.FILE_NAME)
     }
 
     if (matches == null || matches.isEmpty()) {
-        System.err.println("No file named '${ProjectConfiguration.FILE_NAME}' was found inside '$directory'")
+        System.err.println("No file named '${ProjectConfiguration.FILE_NAME}' was found inside '${arguments.directory}'")
         exitProcess(-1)
     } else {
         return matches[0].readConfig()

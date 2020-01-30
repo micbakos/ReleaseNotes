@@ -4,18 +4,18 @@ import java.io.File
 import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess
 
-fun Arguments.gitLog(): String {
+fun gitLog(arguments: Arguments): String {
     // A command consists of a list of strings that will be fed to the process builder sequentially
     val command = listOf(
         "git",
         "log",
-        "${fromCommit}..${toCommit}", // The range of commits to show
+        "${arguments.fromCommit}..${arguments.toCommit}", // The range of commits to show
         "--format=%s%n%b", // The format as of: Title\nBody
         "--merges", // Accept only merge commits
         "--grep=Merge pull request" // Filter commits which are actualy pull request merges
     )
 
-    return command.execute(File(directory))
+    return command.execute(File(arguments.directory))
 }
 
 
