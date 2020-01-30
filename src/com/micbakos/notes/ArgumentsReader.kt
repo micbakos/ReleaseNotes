@@ -1,3 +1,5 @@
+package com.micbakos.notes
+
 import kotlin.system.exitProcess
 
 fun Array<String>.read(): Arguments {

@@ -1,3 +1,5 @@
+package com.micbakos.notes
+
 import java.io.File
 import java.util.concurrent.TimeUnit
 import kotlin.system.exitProcess

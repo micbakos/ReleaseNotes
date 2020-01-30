@@ -1,10 +1,12 @@
 #!/usr/bin/env kscript
 
-@file:Include("src/Models.kt")
-@file:Include("src/ArgumentsReader.kt")
-@file:Include("src/GitLogger.kt")
-@file:Include("src/PullRequestResolver.kt")
-@file:Include("src/NotesWriter.kt")
+@file:Include("src/com/micbakos/notes/Pipeline.kt")
+@file:Include("src/com/micbakos/notes/Models.kt")
+@file:Include("src/com/micbakos/notes/ArgumentsReader.kt")
+@file:Include("src/com/micbakos/notes/GitLogger.kt")
+@file:Include("src/com/micbakos/notes/PullRequestResolver.kt")
+@file:Include("src/com/micbakos/notes/NotesWriter.kt")
 
-args.read().gitLog().resolve().write()
+import DependsOn
 
+Pipeline(args).start()

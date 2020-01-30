@@ -1,3 +1,4 @@
+package com.micbakos.notes
 
 fun String.resolve(): List<PullRequest> {
     val output = lines()
