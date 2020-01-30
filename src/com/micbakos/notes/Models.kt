@@ -2,6 +2,17 @@ package com.micbakos.notes
 
 import com.google.gson.annotations.SerializedName
 
+/**
+ * Need a class to be able to use a const val, since top level constants are not supported
+ */
+class ProjectConfiguration {
+
+    companion object {
+        const val FILE_NAME = "notesConfig.json"
+    }
+
+}
+
 data class Arguments(
     val directory: String,
     val fromCommit: String,
