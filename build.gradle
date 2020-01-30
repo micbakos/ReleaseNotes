@@ -8,9 +8,10 @@ repositories {
 }
 
 dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib"
-    compile "org.jetbrains.kotlin:kotlin-script-runtime"
-    compile "com.github.holgerbrandl:kscript-annotations:1.2"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    implementation "org.jetbrains.kotlin:kotlin-script-runtime"
+    implementation "com.github.holgerbrandl:kscript-annotations:1.2"
+    implementation "com.beust:klaxon:5.0.1"
 }
 
 sourceSets.main.java.srcDirs 'src'
