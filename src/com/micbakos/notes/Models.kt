@@ -9,6 +9,7 @@ class ProjectConfiguration {
 
     companion object {
         const val FILE_NAME = "notesConfig.json"
+        const val PULL_REQUEST_ID_REGEX = "(#\\d+)"
     }
 
 }
@@ -23,7 +24,6 @@ data class Arguments(
 data class PullRequest(
     val id: String,
     val branch: String,
-    val issueId: String,
     val title: String
 )
 
