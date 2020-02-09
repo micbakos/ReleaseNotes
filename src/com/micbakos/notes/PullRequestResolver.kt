@@ -1,30 +1,38 @@
 package com.micbakos.notes
 
-fun String.resolve(): List<PullRequest> {
-    val output = lines()
+import kotlin.system.exitProcess
 
-    // The title consists of two capture groups. The PR's id and branch
-    val titleRegex = "Merge pull request #([0-9]+) from taxibeat/(.+)".toRegex()
-    // The body also consists of two capture groups. The JIRA id and the rest of the title
-    val bodyRegex = "\\[(.+-\\d+)] (.+)".toRegex()
+fun resolve(log: String, config: Config, arguments: Arguments): Map<String, List<PullRequest>> {
+    val output = log.lines()
+    val pullRequestCategories = mutableMapOf<String, ArrayList<PullRequest>>()
+    for (line in 0..(output.size - 2) step 2) {
+        // A pull request is analyzed in every two lines as described in the --format command
+        val commitTitle = output[line]
+        val body = output[line + 1]
 
-    // A pull request is analyzed in every two lines as described in the --format command
-    return MutableList(output.size / 2) { index ->
-        val outputIndex = index * 2
-        val commitTitle = output[outputIndex]
-        val body = output[outputIndex + 1]
+        val variant = config.variants.find { it.name == arguments.variant } ?: run {
+            System.err.println("Variant named: ${arguments.variant} does not exist in ${ProjectConfiguration.FILE_NAME}")
+            exitProcess(-1)
+        }
 
-        val commitTitleResults = titleRegex.find(commitTitle)
-        val commitBodyResults = bodyRegex.find(body)
+        val category = variant.categories.find {
+            it.regex.toRegex().containsMatchIn(commitTitle)
+        } ?: continue
 
-        return@MutableList if (commitTitleResults != null && commitBodyResults != null) {
-            val (id, branch) = commitTitleResults.destructured
-            val (issueId, title) = commitBodyResults.destructured
+        val branchName = category.regex.toRegex().find(commitTitle)?.value ?: continue
 
-            PullRequest(id = id, branch = branch, issueId = issueId, title = title)
-        } else {
-            null
+        val pullRequestId = ProjectConfiguration.PULL_REQUEST_ID_REGEX.toRegex()
+            .find(commitTitle)?.value ?: continue
+
+        /*config.links.forEach { link ->
+            body = body.replace(link.regex.toRegex(), link.url)
+        }*/
+
+        val pullRequest = PullRequest(pullRequestId, branchName, body)
+        pullRequestCategories[category.title]?.add(pullRequest) ?: run {
+            pullRequestCategories[category.title] = arrayListOf(pullRequest)
         }
     }
-        .filterNotNull()
+
+    return pullRequestCategories
 }

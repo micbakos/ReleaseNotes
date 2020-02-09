@@ -31,5 +31,5 @@ fun List<String>.execute(directory: File): String {
         exitProcess(process.exitValue())
     }
 
-    return process.inputStream.bufferedReader().readText()
+    return process.inputStream.bufferedReader().readText().trim()
 }
