@@ -29,12 +29,7 @@ class Notes {
         val arguments = args.read()
         val config = resolveConfig(arguments)
         val logResult = gitLog(arguments)
-        resolve(logResult, config, arguments).forEach {
-            println(it.key)
-            it.value.forEach { pr ->
-                println("* $pr")
-            }
-        }
+        val pullRequests = resolve(logResult, config, arguments)
     }
 
 }
