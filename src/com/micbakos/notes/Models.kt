@@ -28,8 +28,6 @@ data class PullRequest(
 )
 
 data class Config(
-    @SerializedName("github_url")
-    val githubUrl: String,
     val variants: List<Variant>,
     val links: List<Link>
 )
