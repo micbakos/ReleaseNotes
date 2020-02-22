@@ -1,12 +1,12 @@
 # Release Notes
 
-This repository contains a simple script that automates the compilation of [Android Beat's](https://github.com/taxibeat/) release notes documenation.
+This repository contains a simple script that compiles a list of pull request merge commits and uses them to display a readbale list of release notes.
 
 It uses [kscript](https://github.com/holgerbrandl/kscript) to read an execute the commands written in Kotlin.
 
 ## Reasoning
-The organization abides by the scrum agile methodology and the mobile team follows the git flow branching model. Before every release the team copiles 
-all the work that has been done on each sprint. The document is a list of Github's Pull Requests that link to a Jira issue ticket.
+This script is currently used by the [Beat](https://github.com/beatlabs) mobile team. The organization abides by the scrum agile methodology and the mobile team follows the git flow branching model. Before every release the team compiles 
+all the work that has been done on each sprint. The final document is a list of Github's Pull Requests that link to a Jira issue ticket.
 
 This goal of this script is to laverage the infrastracture of the company and the mobile team's workflow to automate this task. The release notes are compiled into a Markdown file.
 
