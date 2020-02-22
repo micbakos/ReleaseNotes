@@ -95,7 +95,7 @@ The output is printed in Markdown style with the following format
 
 **Command**:
 ```
-./notes.kt /path/to/project variant FROM-RELEASE-TAG TO-RELEASE-TAG
+./Notes.kt /path/to/project variant FROM-RELEASE-TAG TO-RELEASE-TAG
 ```
 Arguments: 
 * The path of the project's location
