@@ -6,6 +6,7 @@
 @file:Include("src/com/micbakos/notes/GitLogger.kt")
 @file:Include("src/com/micbakos/notes/Models.kt")
 @file:Include("src/com/micbakos/notes/PullRequestResolver.kt")
+@file:Include("src/com/micbakos/notes/Writer.kt")
 @file:EntryPoint("Notes")
 
 import DependsOn
@@ -30,6 +31,7 @@ class Notes {
         val config = resolveConfig(arguments)
         val logResult = gitLog(arguments)
         val pullRequests = resolve(logResult, config, arguments)
+        println(write(pullRequests))
     }
 
 }
