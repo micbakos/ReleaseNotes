@@ -12,6 +12,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-script-runtime"
     implementation "com.github.holgerbrandl:kscript-annotations:1.2"
     implementation "com.google.code.gson:gson:2.8.6"
+    implementation "com.sksamuel.hoplite:hoplite-core:1.2.0"
 }
 
 sourceSets.main.java.srcDirs 'src'
