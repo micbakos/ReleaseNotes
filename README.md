@@ -16,7 +16,7 @@ This goal of this script is to laverage the infrastracture of the company and th
 * Install kscript. Follow the steps described [here](https://github.com/holgerbrandl/kscript#installation).
 
 ## Dynamic configuration
-In order for the script to run dynamically, the user needs to create a configuration file (in Json format) and place it anywhere inside their project. **The file needs to be named `notesConfig.json`**
+In order for the script to run dynamically, the user needs to create a configuration file (in Json or Yaml format) and place it anywhere inside their project. **The file needs to be named `notesConfig.[json|yaml|yml]`**
 
 The configuration file needs to define the following attributes:
 - `variants`: Each variant is a representation of a project that outputs release notes. Some repositories may consist of more than one project.
