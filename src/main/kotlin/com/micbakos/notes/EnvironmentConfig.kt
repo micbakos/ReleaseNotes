@@ -13,6 +13,7 @@ fun resolveConfig(arguments: Arguments): Config {
         System.err.println("No file named '${ProjectConfiguration.VALID_FILE_NAMES}' was found inside '${arguments.directory}'")
         exitProcess(-1)
     } else {
+        if (matches.size > 1) System.out.println("Found multiple configuration files. Loading ${matches[0].name}")
         return matches[0].readConfig()
     }
 }
