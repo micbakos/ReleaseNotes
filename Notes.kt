@@ -3,6 +3,7 @@
 //COMPILER_OPTS -jvm-target 1.8
 @file:DependsOn("com.sksamuel.hoplite:hoplite-core:1.2.0")
 @file:DependsOn("com.sksamuel.hoplite:hoplite-json:1.2.0")
+@file:DependsOn("com.sksamuel.hoplite:hoplite-yaml:1.2.0")
 @file:Include("src/main/kotlin/com/micbakos/notes/ArgumentsReader.kt")
 @file:Include("src/main/kotlin/com/micbakos/notes/EnvironmentConfig.kt")
 @file:Include("src/main/kotlin/com/micbakos/notes/GitLogger.kt")
