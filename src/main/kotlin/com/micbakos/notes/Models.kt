@@ -6,7 +6,10 @@ package com.micbakos.notes
 class ProjectConfiguration {
 
     companion object {
-        const val FILE_NAME = "notesConfig.json"
+        private const val JSON_SUFFIX = "json"
+        private const val YAML_SUFFIX = "yaml"
+        private const val YML_SUFFIX = "yml"
+        const val FILE_NAME = "notesConfig.$JSON_SUFFIX"
         const val PULL_REQUEST_ID_REGEX = "(#\\d+)"
     }
 
