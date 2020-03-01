@@ -19,6 +19,8 @@ dependencies {
     implementation "com.github.holgerbrandl:kscript-annotations:1.2"
     implementation "com.google.code.gson:gson:2.8.6"
     implementation "com.sksamuel.hoplite:hoplite-core:1.2.0"
+    implementation "com.sksamuel.hoplite:hoplite-yaml:1.2.0"
+    implementation "com.sksamuel.hoplite:hoplite-json:1.2.0"
 }
 
 sourceSets.main.java.srcDirs 'src'
