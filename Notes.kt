@@ -1,5 +1,6 @@
 #!/usr/bin/env kscript
 
+//COMPILER_OPTS -jvm-target 1.8
 @file:DependsOn("com.google.code.gson:gson:2.8.6")
 @file:DependsOn("com.sksamuel.hoplite:hoplite-core:1.2.0")
 @file:Include("src/main/kotlin/com/micbakos/notes/ArgumentsReader.kt")
