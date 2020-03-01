@@ -1,7 +1,5 @@
 package com.micbakos.notes
 
-import com.google.gson.annotations.SerializedName
-
 /**
  * Need a class to be able to use a const val, since top level constants are not supported
  */

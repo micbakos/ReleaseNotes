@@ -1,7 +1,7 @@
 package com.micbakos.notes
 
-import com.google.gson.Gson
-import com.google.gson.JsonSyntaxException
+import com.sksamuel.hoplite.ConfigException
+import com.sksamuel.hoplite.ConfigLoader
 import java.io.File
 import kotlin.system.exitProcess
 
@@ -20,8 +20,8 @@ fun resolveConfig(arguments: Arguments): Config {
 
 fun File.readConfig(): Config {
     return try {
-        Gson().fromJson(readText(), Config::class.java)
-    } catch (exception: JsonSyntaxException) {
+        ConfigLoader().loadConfigOrThrow<Config>(this.toPath())
+    } catch (exception: ConfigException) {
         System.err.println("Error parsing ${ProjectConfiguration.FILE_NAME}")
         exitProcess(-1)
     }
