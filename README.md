@@ -12,9 +12,10 @@ This goal of this script is to laverage the infrastracture of the company and th
 
 ## Installation
 * Clone the project
+* Use JDK 8 (this is due to issues with dependency resolution of kscript)
 * Install kscript. Follow the steps described [here](https://github.com/holgerbrandl/kscript#installation).
 
-## Dunamic configuration
+## Dynamic configuration
 In order for the script to run dynamically, the user needs to create a configuration file (in Json format) and place it anywhere inside their project. **The file needs to be named `notesConfig.json`**
 
 The configuration file needs to define the following attributes:
@@ -28,6 +29,35 @@ The configuration file needs to define the following attributes:
   - `url`: The replacement url of each issue in order to transform it to a link.
 
 ### Example of a configuration file:
+
+#### Yaml
+```yaml
+
+---
+variants:
+- name: passenger
+  categories:
+  - title: Product
+    regex: taxibeat\/(passenger|all)\/(feature)\/(?!infra).+\/.+
+  - title: Infra
+    regex: taxibeat\/(passenger|all)\/(feature|chapter)\/infra\/.+
+  - title: Bugs
+    regex: taxibeat\/(passenger|all)\/(bugfix|hotfix)\/.+
+- name: driver
+  categories:
+  - title: Product
+    regex: taxibeat\/(driver|all)\/(feature)\/(?!infra).+\/.+
+  - title: Infra
+    regex: taxibeat\/(driver|all)\/(feature|chapter)\/infra\/.+
+  - title: Bugs
+    regex: taxibeat\/(driver|all)\/(bugfix|hotfix)\/.+
+links:
+- url: https://jira.taxibeat.com/browse/$1
+  regex: "\\[(\\D+-\\d+)\\]"
+
+```
+
+#### JSON
 ```
 {
   "variants": [
