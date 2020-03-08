@@ -1,14 +1,20 @@
 package com.micbakos.notes
 
-import com.google.gson.annotations.SerializedName
-
 /**
  * Need a class to be able to use a const val, since top level constants are not supported
  */
 class ProjectConfiguration {
 
     companion object {
-        const val FILE_NAME = "notesConfig.json"
+        private const val JSON_SUFFIX = ".json"
+        private const val YAML_SUFFIX = ".yaml"
+        private const val YML_SUFFIX = ".yml"
+        private const val FILE_NAME_PREFIX = "notesConfig"
+        val VALID_FILE_NAMES: List<String> = listOf(
+            FILE_NAME_PREFIX + JSON_SUFFIX,
+            FILE_NAME_PREFIX + YAML_SUFFIX,
+            FILE_NAME_PREFIX + YML_SUFFIX
+        )
         const val PULL_REQUEST_ID_REGEX = "(#\\d+)"
     }
 
