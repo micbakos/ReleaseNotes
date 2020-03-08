@@ -33,7 +33,6 @@ The configuration file needs to define the following attributes:
 #### Yaml
 ```yaml
 
----
 variants:
 - name: passenger
   categories:
