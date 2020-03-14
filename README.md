@@ -2,18 +2,11 @@
 
 This repository contains a simple script that compiles a list of pull request merge commits and uses them to display a readbale list of release notes.
 
-It uses [kscript](https://github.com/holgerbrandl/kscript) to read an execute the commands written in Kotlin.
-
 ## Reasoning
 This script is currently used by the [Beat](https://github.com/beatlabs) mobile team. The organization abides by the scrum agile methodology and the mobile team follows the git flow branching model. Before every release the team compiles 
 all the work that has been done on each sprint. The final document is a list of Github's Pull Requests that link to a Jira issue ticket.
 
 This goal of this script is to laverage the infrastracture of the company and the mobile team's workflow to automate this task. The release notes are compiled into a Markdown file.
-
-## Installation
-* Clone the project
-* Use JDK 8 (this is due to issues with dependency resolution of kscript)
-* Install kscript. Follow the steps described [here](https://github.com/holgerbrandl/kscript#installation).
 
 ## Dynamic configuration
 In order for the script to run dynamically, the user needs to create a configuration file (in Json or Yaml format) and place it anywhere inside their project. **The file needs to be named `notesConfig.[json|yaml|yml]`**
@@ -57,7 +50,7 @@ links:
 ```
 
 #### JSON
-```
+```json
 {
   "variants": [
     {
@@ -120,15 +113,29 @@ The output is printed in Markdown style with the following format
   ...
 ```
 
-## How to run 
+## Installation and running
 
-**Command**:
+#### Manual installation
+* Clone the project
+* Run notes script with the following command inside the `ReleaseNotes/` directory
 ```
-./Notes.kt /path/to/project variant FROM-RELEASE-TAG TO-RELEASE-TAG
+./notes /path/to/project variant FROM-RELEASE-TAG TO-RELEASE-TAG
 ```
-Arguments: 
+
+#### Installation with Homebrew
+* Run the following command
+```bash
+brew install micbakos/tap/release-notes
+```
+* And then run with the following command
+```bash
+notes /path/to/project variant FROM-RELEASE-TAG TO-RELEASE-TAG
+```
+
+#### Arguments: 
 * The path of the project's location
-* The choosen variant as defined in the configuration file
+* The chosen variant as defined in the configuration file
 * The commit from which the script will search the merge commits
 * The commit to which the script will stop the search
+
 Both of the from-to attributes can be represented by the commit's hash or tag. 
