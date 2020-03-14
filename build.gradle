@@ -24,6 +24,3 @@ dependencies {
     implementation "com.sksamuel.hoplite:hoplite-yaml:1.2.0"
     implementation "com.sksamuel.hoplite:hoplite-json:1.2.0"
 }
-
-sourceSets.main.java.srcDirs 'src'
-sourceSets.test.java.srcDirs 'src'
