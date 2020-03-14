@@ -1,3 +1,10 @@
 #!/bin/bash
 
-./gradlew -q assemble && ./gradlew run -q --args="$1 $2 $3 $4"
+# Resolve the current working directory (in case of sym-linking)
+WORKING_DIR="$(dirname "$(readlink -f "$0")")"
+
+# Assemble the project
+${WORKING_DIR}/gradlew -q assemble
+
+# Run the project
+${WORKING_DIR}/gradlew run -q --args="$1 $2 $3 $4"
