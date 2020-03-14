@@ -11,7 +11,7 @@ fun resolveConfig(arguments: Arguments): Config {
 
     if (matches == null || matches.isEmpty()) {
         System.err.println("No file named '${ProjectConfiguration.VALID_FILE_NAMES}' was found inside '${arguments.directory}'")
-        exitProcess(-1)
+        exitProcess(0)
     } else {
         if (matches.size > 1) System.out.println("Found multiple configuration files. Loading ${matches[0].name}")
         return matches[0].readConfig()
@@ -24,6 +24,6 @@ fun File.readConfig(): Config {
     } catch (exception: RuntimeException) {
         System.err.println("Error parsing ${this.name}")
         exception.printStackTrace()
-        exitProcess(-1)
+        exitProcess(0)
     }
 }

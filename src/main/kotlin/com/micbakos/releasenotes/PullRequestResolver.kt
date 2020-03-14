@@ -33,7 +33,7 @@ fun resolve(log: String, config: Config, arguments: Arguments): Map<String, List
 private fun ensureVariant(config: Config, arguments: Arguments): Variant {
     return config.variants.find { it.name == arguments.variant } ?: run {
         System.err.println("Variant named: ${arguments.variant} does not exist in file loaded.")
-        exitProcess(-1)
+        exitProcess(0)
     }
 }
 
