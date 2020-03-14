@@ -1,4 +1,4 @@
-package com.micbakos.notes
+package com.micbakos.releasenotes
 
 import java.io.File
 import java.util.concurrent.TimeUnit

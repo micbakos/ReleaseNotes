@@ -1,4 +1,4 @@
-package com.micbakos.notes
+package com.micbakos.releasenotes
 
 import com.sksamuel.hoplite.ConfigLoader
 import java.io.File

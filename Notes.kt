@@ -4,12 +4,12 @@
 @file:DependsOn("com.sksamuel.hoplite:hoplite-core:1.2.0")
 @file:DependsOn("com.sksamuel.hoplite:hoplite-json:1.2.0")
 @file:DependsOn("com.sksamuel.hoplite:hoplite-yaml:1.2.0")
-@file:Include("src/main/kotlin/com/micbakos/notes/ArgumentsReader.kt")
-@file:Include("src/main/kotlin/com/micbakos/notes/EnvironmentConfig.kt")
-@file:Include("src/main/kotlin/com/micbakos/notes/GitLogger.kt")
-@file:Include("src/main/kotlin/com/micbakos/notes/Models.kt")
-@file:Include("src/main/kotlin/com/micbakos/notes/PullRequestResolver.kt")
-@file:Include("src/main/kotlin/com/micbakos/notes/Writer.kt")
+@file:Include("src/main/kotlin/com/micbakos/releasenotes/ArgumentsReader.kt")
+@file:Include("src/main/kotlin/com/micbakos/releasenotes/EnvironmentConfig.kt")
+@file:Include("src/main/kotlin/com/micbakos/releasenotes/GitLogger.kt")
+@file:Include("src/main/kotlin/com/micbakos/releasenotes/Models.kt")
+@file:Include("src/main/kotlin/com/micbakos/releasenotes/PullRequestResolver.kt")
+@file:Include("src/main/kotlin/com/micbakos/releasenotes/Writer.kt")
 @file:EntryPoint("Notes")
 
 import CompilerOpts

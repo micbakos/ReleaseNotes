@@ -1,4 +1,4 @@
-package com.micbakos.notes
+package com.micbakos.releasenotes
 
 fun write(pullRequests: Map<String, List<PullRequest>>): String {
     val output = StringBuilder()

@@ -1,4 +1,4 @@
-package com.micbakos.notes
+package com.micbakos.releasenotes
 
 import kotlin.system.exitProcess
 

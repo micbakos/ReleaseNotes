@@ -1,4 +1,4 @@
-package com.micbakos.notes
+package com.micbakos.releasenotes
 
 /**
  * Need a class to be able to use a const val, since top level constants are not supported
