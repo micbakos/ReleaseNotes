@@ -27,4 +27,7 @@ dependencies {
     implementation "com.sksamuel.hoplite:hoplite-core:1.2.0"
     implementation "com.sksamuel.hoplite:hoplite-yaml:1.2.0"
     implementation "com.sksamuel.hoplite:hoplite-json:1.2.0"
+    
+    testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.0"
+    testImplementation "com.ginsberg:junit5-system-exit:1.0.0"
 }
