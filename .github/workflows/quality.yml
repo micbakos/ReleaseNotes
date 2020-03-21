@@ -5,7 +5,7 @@ name: Quality CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, quality-actions ]
   pull_request:
     branches: [ master ]
 
