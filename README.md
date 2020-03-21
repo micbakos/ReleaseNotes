@@ -1,3 +1,5 @@
+![Quality CI](https://github.com/micbakos/ReleaseNotes/workflows/Quality%20CI/badge.svg)
+
 # Release Notes
 
 This repository contains a simple script that compiles a list of pull request merge commits and uses them to display a readbale list of release notes.
