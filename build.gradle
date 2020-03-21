@@ -22,6 +22,15 @@ compileKotlin {
 
 mainClassName = "com.micbakos.releasenotes.Notes"
 
+sourceSets {
+    main.kotlin.srcDirs = ['src/main/kotlin']
+    test.kotlin.srcDirs = ['src/test/kotlin']
+}
+
+test {
+    useJUnitPlatform()
+}
+
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib"
     implementation "com.sksamuel.hoplite:hoplite-core:1.2.0"
@@ -29,5 +38,6 @@ dependencies {
     implementation "com.sksamuel.hoplite:hoplite-json:1.2.0"
     
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.6.0"
+    testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.6.0"
     testImplementation "com.ginsberg:junit5-system-exit:1.0.0"
 }
