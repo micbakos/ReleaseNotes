@@ -1,0 +1,6 @@
+**Features**
+* [[ID-1000]](https://issue.tracker.com/ID-1000) Add new feature to project #100
+* [[ID-1052]](https://issue.tracker.com/ID-1052) Feature of team 1 with another link [[ID-1053]](https://issue.tracker.com/ID-1053) #103
+
+**Bugs**
+* [[ID-1023]](https://issue.tracker.com/ID-1023) Fix nasty bug in project #101

@@ -2,12 +2,14 @@ package com.micbakos.releasenotes
 
 fun write(pullRequests: Map<String, List<PullRequest>>): String {
     val output = StringBuilder()
-    pullRequests.entries.forEach {
-        output.appendln("**${it.key}**")
-        it.value.forEach { pr ->
-            output.appendln("* ${pr.title} ${pr.id}")
+    pullRequests.entries.forEachIndexed { index, pair ->
+        if (index > 0) output.appendln().appendln()
+
+        output.appendln("**${pair.key}**")
+        pair.value.forEachIndexed { prIndex, pr ->
+            if (prIndex > 0) output.appendln()
+            output.append("* ${pr.title} ${pr.id}")
         }
-        output.appendln()
     }
     return output.toString()
 }
