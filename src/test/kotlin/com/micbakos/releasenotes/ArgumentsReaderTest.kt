@@ -1,11 +1,9 @@
 package com.micbakos.releasenotes
 
 import com.ginsberg.junit.exit.ExpectSystemExitWithStatus
+import com.micbakos.releasenotes.utilities.stubSystemError
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import java.io.ByteArrayOutputStream
-import java.io.PrintStream
-
 
 internal class ArgumentsReaderTest {
 
@@ -56,9 +54,5 @@ internal class ArgumentsReaderTest {
         input.read()
 
         assertEquals("\"Incorrect arguments. Valid arguments are:\\n\\t\$ Notes.kts <project-dir> <variant> <from-commit> <to-commit>\"", errorStream.toString())
-    }
-
-    private fun stubSystemError(): ByteArrayOutputStream = ByteArrayOutputStream().apply {
-        System.setErr(PrintStream(this))
     }
 }

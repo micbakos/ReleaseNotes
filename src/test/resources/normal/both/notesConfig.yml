@@ -1,0 +1,10 @@
+variants:
+  - name: project
+    categories:
+      - title: Features
+        regex: \/feature\/.+
+      - title: Bugs
+        regex: \/bug\/.+
+links:
+  - url: https://issue.tracker.com/$1
+    regex: "\\[(\\D+-\\d+)\\]"
