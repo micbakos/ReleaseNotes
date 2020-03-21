@@ -17,7 +17,7 @@ fun variant(
     name: String = "project",
     categories: List<Category> = listOf(
         category(),
-        category("Bugs", "\\/bug\\/.+")
+        category("Bugs", "bug\\/.+")
     )
 ) = Variant(
     name = name,
@@ -26,7 +26,7 @@ fun variant(
 
 fun category(
     title: String = "Features",
-    regex: String = "\\/feature\\/.+"
+    regex: String = "feature\\/.+"
 ) = Category(
     title = title,
     regex = regex

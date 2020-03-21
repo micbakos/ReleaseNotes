@@ -1,0 +1,8 @@
+Merge pull request #100 from feature/add-new-feature
+[ID-1000] Add new feature to project
+Merge pull request #101 from bug/fix-bug
+[ID-1023] Fix nasty bug in project
+Merge pull request #102 from whatever/branch/name
+Title of feature that should be ignored
+Merge pull request #103 from feature/team1/feature-of-team-1
+[ID-1052] Feature of team 1 with another link [ID-1053]

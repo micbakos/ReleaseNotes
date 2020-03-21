@@ -2,9 +2,9 @@ variants:
   - name: project
     categories:
       - title: Features
-        regex: \/feature\/.+
+        regex: feature\/.+
       - title: Bugs
-        regex: \/bug\/.+
+        regex: bug\/.+
 links:
   - url: https://issue.tracker.com/$1
     regex: "\\[(\\D+-\\d+)\\]"

@@ -5,11 +5,11 @@
       "categories": [
         {
           "title": "Features",
-          "regex": "\\/feature\\/.+"
+          "regex": "feature\\/.+"
         },
         {
           "title": "Bugs",
-          "regex": "\\/bug\\/.+"
+          "regex": "bug\\/.+"
         }
       ]
     }
