@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Assemble the project
-./gradlew -q assemble
+# Resolve directory of the script
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 # Run the project
-./gradlew run -q --args="$1 $2 $3 $4"
+$DIR/gradlew -b $DIR/build.gradle run -q --args="$1 $2 $3 $4"
