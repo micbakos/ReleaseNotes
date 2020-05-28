@@ -23,8 +23,8 @@ compileKotlin {
 mainClassName = "com.micbakos.releasenotes.Notes"
 
 sourceSets {
-    main.kotlin.srcDirs = ['src/main/kotlin']
-    test.kotlin.srcDirs = ['src/test/kotlin']
+    main.java.srcDirs = ['src/main/kotlin']
+    test.java.srcDirs = ['src/test/kotlin']
 }
 
 test {
