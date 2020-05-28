@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import java.io.File
 
-class WriterTest {
+class ReporterTest {
 
     companion object {
 
@@ -15,7 +15,7 @@ class WriterTest {
 
     @Test
     fun `given map of pull requests, when writer is invoked, then the returned output is the expected`() {
-        val result = write(pullRequestsMap())
+        val result = report(pullRequestsMap())
 
         assertEquals(expectedOutput(), result)
     }

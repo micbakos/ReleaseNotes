@@ -24,8 +24,14 @@ data class Arguments(
     val directory: String,
     val variant: String,
     val fromCommit: String,
-    val toCommit: String
+    val toCommit: String,
+    val output: Output
 )
+
+sealed class Output {
+    object StdOutput : Output()
+    data class FileOutput(val path: String) : Output()
+}
 
 data class PullRequest(
     val id: String,

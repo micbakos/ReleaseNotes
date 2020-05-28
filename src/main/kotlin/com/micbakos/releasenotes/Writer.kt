@@ -1,6 +1,6 @@
 package com.micbakos.releasenotes
 
-fun write(pullRequests: Map<String, List<PullRequest>>): String {
+fun report(pullRequests: Map<String, List<PullRequest>>): String {
     val output = StringBuilder()
     pullRequests.entries.forEachIndexed { index, pair ->
         if (index > 0) output.appendln().appendln()
@@ -11,5 +11,6 @@ fun write(pullRequests: Map<String, List<PullRequest>>): String {
             output.append("* ${pr.title} ${pr.id}")
         }
     }
+
     return output.toString()
 }

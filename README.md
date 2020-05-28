@@ -121,7 +121,7 @@ The output is printed in Markdown style with the following format
 * Clone the project
 * Run notes script with the following command inside the `ReleaseNotes/` directory
 ```
-./notes /path/to/project variant FROM-RELEASE-TAG TO-RELEASE-TAG
+./notes /path/to/project variant FROM-RELEASE-TAG TO-RELEASE-TAG /path/to/output/file
 ```
 
 #### Installation with Homebrew
@@ -131,7 +131,7 @@ brew install micbakos/tap/release-notes
 ```
 * And then run with the following command
 ```bash
-notes /path/to/project variant FROM-RELEASE-TAG TO-RELEASE-TAG
+notes /path/to/project variant FROM-RELEASE-TAG TO-RELEASE-TAG /path/to/output/file
 ```
 
 #### Arguments: 
@@ -139,5 +139,6 @@ notes /path/to/project variant FROM-RELEASE-TAG TO-RELEASE-TAG
 * The chosen variant as defined in the configuration file
 * The commit from which the script will search the merge commits
 * The commit to which the script will stop the search
+* [OPTIONAL] The output file path. If no file specified the script will report to std-out.
 
 Both of the from-to attributes can be represented by the commit's hash or tag. 
